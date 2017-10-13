@@ -1,5 +1,7 @@
 <h1>Instagram Photos of <%= @instagram_username %></h1>
 
+<h2><%= link_to 'Update data from Instagram', landing_index_path, method: 'post' %></h2>
+
 <% @photos.each do |photo| %>
     <%= image_tag photo[:standard_resolution] %>
     <%= image_tag photo[:low_resolution] %>
