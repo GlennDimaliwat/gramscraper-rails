@@ -1,0 +1,8 @@
+<h1>Instagram Photos of <%= @instagram_username %></h1>
+
+<% @photos.each do |photo| %>
+    <%= image_tag photo[:standard_resolution] %>
+    <%= image_tag photo[:low_resolution] %>
+    <%= image_tag photo[:thumbnail] %>
+    <p><%= photo[:caption] %></p>
+<% end %>
