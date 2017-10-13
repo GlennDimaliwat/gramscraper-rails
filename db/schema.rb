@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171013230625) do
+ActiveRecord::Schema.define(version: 20171013234848) do
 
   create_table "photos", force: :cascade do |t|
     t.string "instagram_photo_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20171013230625) do
     t.text "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["instagram_photo_id"], name: "index_photos_on_instagram_photo_id"
   end
 
 end
