@@ -5,8 +5,9 @@ class LandingController < ApplicationController
   end
 
   def create
+    access_token = ENV.fetch("INSTAGRAM_ACCESS_TOKEN")
     instagram_username = ENV.fetch("INSTAGRAM_USERNAME")
-    photos = Gramscraper.scrape(instagram_username)
+    photos = Gramscraper.scrape(access_token, instagram_username)
     @instagram_data = Array.new
     photos.each do |photo|
         instagram_photo_id = photo[:last_id]
